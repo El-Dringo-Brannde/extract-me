@@ -1,0 +1,27 @@
+{
+  "name": "extract-me",
+  "version": "1.0.0",
+  "description": "A simple CLI to unpack any file whether it is in 7zip, zip, rar, tar, etc. format without knowing the commands",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/El-Dringo-Brannde/extract-me.git"
+  },
+  "author": "Brandon Dring",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/El-Dringo-Brannde/extract-me/issues"
+  },
+  "homepage": "https://github.com/El-Dringo-Brannde/extract-me#readme",
+  "devDependencies": {
+    "@types/node": "^8.0.47",
+    "gulp": "^3.9.1",
+    "gulp-cli": "^1.4.0",
+    "gulp-develop-server": "^0.5.2",
+    "gulp-typescript": "^3.2.3",
+    "typescript": "^2.5.3"
+  }
+}

@@ -1,0 +1,16 @@
+{
+   "compilerOptions": {
+      "module": "commonjs",
+      "types": [
+         "node"
+      ],
+      "target": "es5",
+      "moduleResolution": "node",
+      "sourceMap": false,
+      "baseUrl": "."
+   },
+   "compileOnSave": true,
+   "include": [
+      "src/**/*"
+   ]
+}
