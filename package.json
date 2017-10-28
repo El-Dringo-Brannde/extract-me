@@ -27,7 +27,7 @@
   "dependencies": {
     "commander": "^2.11.0",
     "lodash": "^4.17.4",
-    "node-7zip": "^1.0.1",
+    "node-7z": "^0.4.0",
     "unzip": "^0.1.11"
   }
 }

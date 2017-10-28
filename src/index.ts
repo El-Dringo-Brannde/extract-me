@@ -3,6 +3,8 @@ class extractMe {
    private unzip;
    private _;
    private fs;
+   private sevenZ;
+   private _7z;
 
    constructor() {
       this.initParsers();
@@ -15,6 +17,8 @@ class extractMe {
       this.unzip = require('unzip')
       this._ = require("lodash")
       this.fs = require('fs')
+      this.sevenZ = require("node-7z")
+      this._7z = new this.sevenZ();
 
 
    }
@@ -28,15 +32,22 @@ class extractMe {
 
    private cleanFile(file: string): string {
       if (file[0] + file[1] == "./")
-         file = file.substr(1)
+         file = file.substr(2)
       return file
    }
 
    private parseFileType(file: string): void {
       if (this._.includes(file, ".zip"))
          this.catchZip(file);
+      else if (this._.includes(file, ".7z"))
+         this.catch7Zip(file)
+   }
+
+   private catch7Zip(file: string): void {
+      this._7z.extract(process.cwd() + "/" + file, "./");
 
    }
+
 
 
    private catchZip(file: string): void {
