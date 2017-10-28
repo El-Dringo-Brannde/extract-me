@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "commander": "^2.11.0",
+    "decompress": "^4.2.0",
     "lodash": "^4.17.4",
     "node-7z": "^0.4.0",
     "unzip": "^0.1.11"
