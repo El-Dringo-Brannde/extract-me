@@ -5,6 +5,7 @@ class extractMe {
    private fs;
    private sevenZ;
    private _7z;
+   private decomp;
 
    constructor() {
       this.initParsers();
@@ -19,6 +20,7 @@ class extractMe {
       this.fs = require('fs')
       this.sevenZ = require("node-7z")
       this._7z = new this.sevenZ();
+      this.decomp = require("decompress");
 
 
    }
@@ -41,11 +43,16 @@ class extractMe {
          this.catchZip(file);
       else if (this._.includes(file, ".7z"))
          this.catch7Zip(file)
+      else if (this._.includes(file, ".tar"))
+         this.catchTar(file)
+   }
+
+   private catchTar(file: string): void {
+      this.decomp(process.cwd() + "/" + file, "./")
    }
 
    private catch7Zip(file: string): void {
       this._7z.extract(process.cwd() + "/" + file, "./");
-
    }
 
 
@@ -55,9 +62,6 @@ class extractMe {
          .pipe(this.unzip.Extract({
             path: './'
          }))
-
-
-
    }
 
 }
